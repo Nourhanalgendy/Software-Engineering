@@ -1,0 +1,734 @@
+Emax@Dell-PC MINGW64 ~/Desktop/se 4
+$ git init
+Initialized empty Git repository in C:/Users/Emax/Desktop/se 4/.git/
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+1.1.txt  3.1.txt  5.1.txt  AllMyCommands.txt.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git add1.1.txt
+git: 'add1.1.txt' is not a git command. See 'git --help'.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ clear
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+1.1.txt  3.1.txt  5.1.txt  AllMyCommands.txt.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git add 1.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit 'first file added'
+error: pathspec 'first file added' did not match any file(s) known to git.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m 'first file added'
+[master (root-commit) e7f739f] first file added
+ 1 file changed, 32 insertions(+)
+ create mode 100644 1.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git add 3.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m 'second file added'
+[master de1363b] second file added
+ 1 file changed, 100 insertions(+)
+ create mode 100644 3.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git add  5.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m ' third file added'
+[master 70d655f]  third file added
+ 1 file changed, 55 insertions(+)
+ create mode 100644 5.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git rm 3.1.txt
+rm '3.1.txt'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m 'second file 3.1 deleted'
+[master 5db2b37] second file 3.1 deleted
+ 1 file changed, 100 deletions(-)
+ delete mode 100644 3.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git log
+commit 5db2b37dc726c33ea9e1899fed7ae4fc7368fb33 (HEAD -> master)
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:08:08 2018 +0300
+
+    second file 3.1 deleted
+
+commit 70d655fa801437855ecd664a7a76394ff765e2ef
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:06:17 2018 +0300
+
+     third file added
+
+commit de1363b0be6e0caeeb1ca1338c81897733ed8d3f
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:47 2018 +0300
+
+    second file added
+
+commit e7f739fb7e3a1859d6cef2c1017b3137e92b02f8
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:14 2018 +0300
+
+    first file added
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git revert -n  5db2b37dc726c33ea9e1899fed7ae4fc7368fb33
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master|REVERTING)
+$ git commit -m ' The file 3.1 was restored again'
+[master 77b9a3e]  The file 3.1 was restored again
+ 1 file changed, 100 insertions(+)
+ create mode 100644 3.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git remote add origin https://github.com/Nourhanalgendy/Software-Engineering.g                                                                                            it
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ $ git remote -v
+bash: $: command not found
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git remote -v
+origin  https://github.com/Nourhanalgendy/Software-Engineering.git (fetch)
+origin  https://github.com/Nourhanalgendy/Software-Engineering.git (push)
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git push -u origin master
+Counting objects: 12, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (11/11), done.
+Writing objects: 100% (12/12), 8.66 KiB | 2.17 MiB/s, done.
+Total 12 (delta 2), reused 0 (delta 0)
+remote: Resolving deltas: 100% (2/2), done.
+To https://github.com/Nourhanalgendy/Software-Engineering.git
+ * [new branch]      master -> master
+Branch 'master' set up to track remote branch 'master' from 'origin'.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ touch README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git branch
+* master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git branch ReadMe
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git branch
+* ReadMe
+  master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git add README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m 'The file README.md was added on the new branch Readme'
+[ReadMe 92b3e29] The file README.md was added on the new branch Readme
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git checkout master
+Unlink of file 'README.md' failed. Should I try again? (y/n)
+Sorry, I did not understand your answer. Please type 'y' or 'n'
+Unlink of file 'README.md' failed. Should I try again? (y/n) n
+warning: unable to unlink 'README.md': Invalid argument
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git branch
+  ReadMe
+* master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+error: The following untracked working tree files would be overwritten by checko                                                                                            ut:
+        README.md
+Please move or remove them before you switch branches.
+Aborting
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        AllMyCommands.txt.txt
+        README.md
+        ~$README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+error: The following untracked working tree files would be overwritten by checkout:
+        README.md
+Please move or remove them before you switch branches.
+Aborting
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+Untracked files:
+  (use "git add <file>..." to include in what will be committed)
+
+        AllMyCommands.txt.txt
+        README.md
+        ~$README.md
+
+nothing added to commit but untracked files present (use "git add" to track)
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout
+HEAD            master          origin/master   ReadMe
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout
+HEAD            master          origin/master   ReadMe
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout
+HEAD            master          origin/master   ReadMe
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+error: The following untracked working tree files would be overwritten by checkout:
+        README.md
+Please move or remove them before you switch branches.
+Aborting
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git add README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m'File Readme added on master branch'
+[master 2a6f62d] File Readme added on master branch
+ 1 file changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout  ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git add  README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m 'README.md is now added on branch ReadMe and is ready to be merged'
+On branch ReadMe
+Untracked files:
+        AllMyCommands.txt.txt
+        ~$README.md
+
+nothing added to commit but untracked files present
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git log
+commit 92b3e2943fb1fc217a06c0002c946b94ab7075c3 (HEAD -> ReadMe)
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 00:00:53 2018 +0300
+
+    The file README.md was added on the new branch Readme
+
+commit 77b9a3e8441b2591ac65b3cd8da77fbffce32d19 (origin/master)
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:10:49 2018 +0300
+
+     The file 3.1 was restored again
+
+commit 5db2b37dc726c33ea9e1899fed7ae4fc7368fb33
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:08:08 2018 +0300
+
+    second file 3.1 deleted
+
+commit 70d655fa801437855ecd664a7a76394ff765e2ef
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:06:17 2018 +0300
+
+     third file added
+
+commit de1363b0be6e0caeeb1ca1338c81897733ed8d3f
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:47 2018 +0300
+
+    second file added
+
+commit e7f739fb7e3a1859d6cef2c1017b3137e92b02f8
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:14 2018 +0300
+
+    first file added
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m "README.md is now added on branch ReadMe and is ready to be merged"
+On branch ReadMe
+Untracked files:
+        AllMyCommands.txt.txt
+        ~$README.md
+
+nothing added to commit but untracked files present
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git add .
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git status
+On branch ReadMe
+Changes to be committed:
+  (use "git reset HEAD <file>..." to unstage)
+
+        new file:   AllMyCommands.txt.txt
+        new file:   ~$README.md
+
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m "README.md is now added on branch ReadMe and is ready to be merged"
+[ReadMe 534ef41] README.md is now added on branch ReadMe and is ready to be merged
+ 2 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 AllMyCommands.txt.txt
+ create mode 100644 ~$README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ rm  AllMyCommands.txt.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit " AllMyCommands.txt.txt removed from branch readme'
+>
+>
+> ;
+> ^C
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit " AllMyCommands.txt.txt removed from branch readme"
+error: pathspec ' AllMyCommands.txt.txt removed from branch readme' did not match any file(s) known to git.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m  " AllMyCommands.txt.txt removed from branch readme"
+On branch ReadMe
+Changes not staged for commit:
+        deleted:    AllMyCommands.txt.txt
+
+no changes added to commit
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git status
+On branch ReadMe
+Changes not staged for commit:
+  (use "git add/rm <file>..." to update what will be committed)
+  (use "git checkout -- <file>..." to discard changes in working directory)
+
+        deleted:    AllMyCommands.txt.txt
+
+no changes added to commit (use "git add" and/or "git commit -a")
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -a
+Aborting commit due to empty commit message.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git push
+fatal: The current branch ReadMe has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ReadMe
+
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git push
+fatal: The current branch ReadMe has no upstream branch.
+To push the current branch and set the remote as upstream, use
+
+    git push --set-upstream origin ReadMe
+
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git push origin ReadMe
+Counting objects: 6, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (5/5), done.
+Writing objects: 100% (6/6), 736 bytes | 245.00 KiB/s, done.
+Total 6 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), done.
+To https://github.com/Nourhanalgendy/Software-Engineering.git
+ * [new branch]      ReadMe -> ReadMe
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ rm *
+rm: cannot remove 'README.md': Device or resource busy
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ rm*
+bash: rm*: command not found
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ rm *
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m "I deleted everything in the file"
+On branch master
+Your branch is ahead of 'origin/master' by 1 commit.
+  (use "git push" to publish your local commits)
+
+Changes not staged for commit:
+        deleted:    1.1.txt
+        deleted:    3.1.txt
+        deleted:    5.1.txt
+        deleted:    README.md
+
+no changes added to commit
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git push origin master
+Counting objects: 3, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (3/3), 295 bytes | 147.00 KiB/s, done.
+Total 3 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Nourhanalgendy/Software-Engineering.git
+   77b9a3e..2a6f62d  master -> master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git push
+Everything up-to-date
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git pull
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ rm -- cashed *
+rm: cannot remove 'cashed': No such file or directory
+rm: cannot remove '*': No such file or directory
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git rm *
+rm '1.1.txt'
+rm '3.1.txt'
+rm '5.1.txt'
+rm 'README.md'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git commit -m "I deleted everything in the file"
+[master 045b4fb] I deleted everything in the file
+ 4 files changed, 187 deletions(-)
+ delete mode 100644 1.1.txt
+ delete mode 100644 3.1.txt
+ delete mode 100644 5.1.txt
+ delete mode 100644 README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git push origin master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (1/1), done.
+Writing objects: 100% (2/2), 218 bytes | 218.00 KiB/s, done.
+Total 2 (delta 0), reused 0 (delta 0)
+To https://github.com/Nourhanalgendy/Software-Engineering.git
+   2a6f62d..045b4fb  master -> master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe
+Merge made by the 'recursive' strategy.
+ AllMyCommands.txt.txt |   0
+ README.md             |   0
+ ~$README.md           | Bin 0 -> 162 bytes
+ 3 files changed, 0 insertions(+), 0 deletions(-)
+ create mode 100644 AllMyCommands.txt.txt
+ create mode 100644 README.md
+ create mode 100644 ~$README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git push origin master
+Counting objects: 2, done.
+Delta compression using up to 4 threads.
+Compressing objects: 100% (2/2), done.
+Writing objects: 100% (2/2), 267 bytes | 133.00 KiB/s, done.
+Total 2 (delta 1), reused 0 (delta 0)
+remote: Resolving deltas: 100% (1/1), completed with 1 local object.
+To https://github.com/Nourhanalgendy/Software-Engineering.git
+   045b4fb..2b8adbf  master -> master
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git add 1.1.txt
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m " 1st file added to readme branch"
+On branch ReadMe
+nothing to commit, working tree clean
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git add .
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git commit -m " 1st file added to readme branch"
+On branch ReadMe
+nothing to commit, working tree clean
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git push origin ReadMe
+Everything up-to-date
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+'~$README.md'   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git log
+commit 2b8adbf890e0645a03c08193b59f80656b095fc7 (HEAD -> master, origin/master)
+Merge: 045b4fb 534ef41
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 12:23:06 2018 +0300
+
+    Merge branch 'ReadMe'
+
+commit 045b4fb6f9e8ebf363145300438d8cb6d4532600
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 12:18:08 2018 +0300
+
+    I deleted everything in the file
+
+commit 534ef412a368d76a09c6ec2dd5423b351a17fd15 (origin/ReadMe, ReadMe)
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 11:53:28 2018 +0300
+
+    README.md is now added on branch ReadMe and is ready to be merged
+
+commit 2a6f62db816cefbb92003c89f579e23048928b5c
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 11:13:10 2018 +0300
+
+    File Readme added on master branch
+
+commit 92b3e2943fb1fc217a06c0002c946b94ab7075c3
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Tue Feb 13 00:00:53 2018 +0300
+
+    The file README.md was added on the new branch Readme
+
+commit 77b9a3e8441b2591ac65b3cd8da77fbffce32d19
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:10:49 2018 +0300
+
+     The file 3.1 was restored again
+
+commit 5db2b37dc726c33ea9e1899fed7ae4fc7368fb33
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:08:08 2018 +0300
+
+    second file 3.1 deleted
+
+commit 70d655fa801437855ecd664a7a76394ff765e2ef
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:06:17 2018 +0300
+
+     third file added
+
+commit de1363b0be6e0caeeb1ca1338c81897733ed8d3f
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:47 2018 +0300
+
+    second file added
+
+commit e7f739fb7e3a1859d6cef2c1017b3137e92b02f8
+Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
+Date:   Mon Feb 12 23:05:14 2018 +0300
+
+    first file added
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ^C
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git status
+On branch master
+Your branch is up to date with 'origin/master'.
+
+nothing to commit, working tree clean
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+'~$README.md'   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ ls
+'~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git pull
+There is no tracking information for the current branch.
+Please specify which branch you want to merge with.
+See git-pull(1) for details.
+
+    git pull <remote> <branch>
+
+If you wish to set tracking information for this branch you can do so with:
+
+    git branch --set-upstream-to=origin/<branch> ReadMe
+
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git merge ReadMe
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$ git checkout master
+Switched to branch 'master'
+Your branch is up to date with 'origin/master'.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe
+Already up to date.
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git merge ReadMe -a
+error: unknown switch `a'
+usage: git merge [<options>] [<commit>...]
+   or: git merge --abort
+   or: git merge --continue
+
+    -n                    do not show a diffstat at the end of the merge
+    --stat                show a diffstat at the end of the merge
+    --summary             (synonym to --stat)
+    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
+    --squash              create a single commit instead of doing a merge
+    --commit              perform a commit if the merge succeeds (default)
+    -e, --edit            edit message before committing
+    --ff                  allow fast-forward (default)
+    --ff-only             abort if fast-forward is not possible
+    --rerere-autoupdate   update the index with reused conflict resolution if possible
+    --verify-signatures   verify that the named commit has a valid GPG signature
+    -s, --strategy <strategy>
+                          merge strategy to use
+    -X, --strategy-option <option=value>
+                          option for selected merge strategy
+    -m, --message <message>
+                          merge commit message (for a non-fast-forward merge)
+    -v, --verbose         be more verbose
+    -q, --quiet           be more quiet
+    --abort               abort the current in-progress merge
+    --continue            continue the current in-progress merge
+    --allow-unrelated-histories
+                          allow merging unrelated histories
+    --progress            force progress reporting
+    -S, --gpg-sign[=<key-id>]
+                          GPG sign commit
+    --overwrite-ignore    update ignored files (default)
+    --signoff             add Signed-off-by:
+    --verify              verify commit-msg hook
+
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ ls
+'~$README.md'   AllMyCommands.txt.txt   README.md
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git fetch
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
+$ git checkout ReadMe
+Switched to branch 'ReadMe'
+
+Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+$
