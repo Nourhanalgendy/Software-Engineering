@@ -113,105 +113,44 @@ $ git status
 
 
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ ls
 '~$README.md'   1.1.txt   3.1.txt   5.1.txt   AllMyCommands.txt.txt   README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git checkout
 HEAD            master          origin/master   ReadMe
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git checkout
 HEAD            master          origin/master   ReadMe
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git checkout
 HEAD            master          origin/master   ReadMe
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
-$ git checkout ReadMe
-error: The following untracked working tree files would be overwritten by checkout:
-        README.md
-Please move or remove them before you switch branches.
-Aborting
+
 
 Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git add README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git commit -m'File Readme added on master branch'
-[master 2a6f62d] File Readme added on master branch
- 1 file changed, 0 insertions(+), 0 deletions(-)
- create mode 100644 README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git checkout  ReadMe
 Switched to branch 'ReadMe'
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git add  README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit -m 'README.md is now added on branch ReadMe and is ready to be merged'
 On branch ReadMe
-Untracked files:
-        AllMyCommands.txt.txt
-        ~$README.md
 
-nothing added to commit but untracked files present
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git log
-commit 92b3e2943fb1fc217a06c0002c946b94ab7075c3 (HEAD -> ReadMe)
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Tue Feb 13 00:00:53 2018 +0300
 
-    The file README.md was added on the new branch Readme
 
-commit 77b9a3e8441b2591ac65b3cd8da77fbffce32d19 (origin/master)
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Mon Feb 12 23:10:49 2018 +0300
-
-     The file 3.1 was restored again
-
-commit 5db2b37dc726c33ea9e1899fed7ae4fc7368fb33
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Mon Feb 12 23:08:08 2018 +0300
-
-    second file 3.1 deleted
-
-commit 70d655fa801437855ecd664a7a76394ff765e2ef
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Mon Feb 12 23:06:17 2018 +0300
-
-     third file added
-
-commit de1363b0be6e0caeeb1ca1338c81897733ed8d3f
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Mon Feb 12 23:05:47 2018 +0300
-
-    second file added
-
-commit e7f739fb7e3a1859d6cef2c1017b3137e92b02f8
-Author: Nourhan ALgendy <nourhanalgeendy@gmail.com>
-Date:   Mon Feb 12 23:05:14 2018 +0300
-
-    first file added
-
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit -m "README.md is now added on branch ReadMe and is ready to be merged"
-On branch ReadMe
-Untracked files:
-        AllMyCommands.txt.txt
-        ~$README.md
 
-nothing added to commit but untracked files present
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+
 $ git add .
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
+Emax@ell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git status
 On branch ReadMe
 Changes to be committed:
@@ -221,69 +160,43 @@ Changes to be committed:
         new file:   ~$README.md
 
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit -m "README.md is now added on branch ReadMe and is ready to be merged"
 [ReadMe 534ef41] README.md is now added on branch ReadMe and is ready to be merged
  2 files changed, 0 insertions(+), 0 deletions(-)
  create mode 100644 AllMyCommands.txt.txt
  create mode 100644 ~$README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ rm  AllMyCommands.txt.txt
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit " AllMyCommands.txt.txt removed from branch readme'
 >
 >
 > ;
 > ^C
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
-$ git commit " AllMyCommands.txt.txt removed from branch readme"
-error: pathspec ' AllMyCommands.txt.txt removed from branch readme' did not match any file(s) known to git.
-
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit -m  " AllMyCommands.txt.txt removed from branch readme"
-On branch ReadMe
-Changes not staged for commit:
-        deleted:    AllMyCommands.txt.txt
 
-no changes added to commit
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ ls
 '~$README.md'   1.1.txt   3.1.txt   5.1.txt   README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git status
-On branch ReadMe
-Changes not staged for commit:
-  (use "git add/rm <file>..." to update what will be committed)
-  (use "git checkout -- <file>..." to discard changes in working directory)
 
-        deleted:    AllMyCommands.txt.txt
 
-no changes added to commit (use "git add" and/or "git commit -a")
-
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git commit -a
 Aborting commit due to empty commit message.
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ ls
 '~$README.md'   1.1.txt   3.1.txt   5.1.txt   README.md
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git checkout master
 Switched to branch 'master'
 Your branch is ahead of 'origin/master' by 1 commit.
   (use "git push" to publish your local commits)
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git checkout ReadMe
 Switched to branch 'ReadMe'
 
-Emax@Dell-PC MINGW64 ~/Desktop/se 4 (ReadMe)
 $ git push
 fatal: The current branch ReadMe has no upstream branch.
 To push the current branch and set the remote as upstream, use
@@ -591,40 +504,7 @@ Already up to date.
 
 Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
 $ git merge ReadMe -a
-error: unknown switch `a'
-usage: git merge [<options>] [<commit>...]
-   or: git merge --abort
-   or: git merge --continue
 
-    -n                    do not show a diffstat at the end of the merge
-    --stat                show a diffstat at the end of the merge
-    --summary             (synonym to --stat)
-    --log[=<n>]           add (at most <n>) entries from shortlog to merge commit message
-    --squash              create a single commit instead of doing a merge
-    --commit              perform a commit if the merge succeeds (default)
-    -e, --edit            edit message before committing
-    --ff                  allow fast-forward (default)
-    --ff-only             abort if fast-forward is not possible
-    --rerere-autoupdate   update the index with reused conflict resolution if possible
-    --verify-signatures   verify that the named commit has a valid GPG signature
-    -s, --strategy <strategy>
-                          merge strategy to use
-    -X, --strategy-option <option=value>
-                          option for selected merge strategy
-    -m, --message <message>
-                          merge commit message (for a non-fast-forward merge)
-    -v, --verbose         be more verbose
-    -q, --quiet           be more quiet
-    --abort               abort the current in-progress merge
-    --continue            continue the current in-progress merge
-    --allow-unrelated-histories
-                          allow merging unrelated histories
-    --progress            force progress reporting
-    -S, --gpg-sign[=<key-id>]
-                          GPG sign commit
-    --overwrite-ignore    update ignored files (default)
-    --signoff             add Signed-off-by:
-    --verify              verify commit-msg hook
 
 
 Emax@Dell-PC MINGW64 ~/Desktop/se 4 (master)
